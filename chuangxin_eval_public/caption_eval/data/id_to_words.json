@@ -1,0 +1,154 @@
+{
+  "annotations": [
+    {
+      "caption": "\u4e00\u4e2a \u957f \u5934\u53d1 \u7684 \u5973\u4eba \u5750\u5728 \u6d77\u8fb9 \u6c99\u6ee9 \u7684 \u6905\u5b50 \u4e0a \u770b\u7740 \u84dd\u5929 \u5927\u6d77",
+      "id": 1,
+      "image_id": 6678090646845985471
+    },
+    {
+      "caption": "\u4e00\u4e2a \u5750\u5728 \u6d77\u8fb9 \u6c99\u6ee9 \u6905\u5b50 \u4e0a \u7684 \u5973\u4eba \u6b63\u5728 \u770b\u7740 \u8fdc\u5904 \u7684 \u84dd\u5929 \u5927\u6d77",
+      "id": 2,
+      "image_id": 6678090646845985471
+    },
+    {
+      "caption": "\u4e00\u4e2a \u5e26 \u7740 \u5e3d\u5b50 \u7684 \u5973\u4eba \u5750\u5728 \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u6905\u5b50 \u4e0a \u770b\u7740 \u84dd\u5929 \u5927\u6d77",
+      "id": 3,
+      "image_id": 6678090646845985471
+    },
+    {
+      "caption": "\u4e00\u4e2a \u7a7f\u7740 \u6cf3\u8863 \u7684 \u5973\u4eba \u5750\u5728 \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u6905\u5b50 \u4e0a \u770b\u7740 \u84dd\u5929 \u5927\u6d77",
+      "id": 4,
+      "image_id": 6678090646845985471
+    },
+    {
+      "caption": "\u4e00\u4e2a \u5750\u5728 \u6d77\u8fb9 \u6c99\u6ee9 \u6905\u5b50 \u4e0a \u7684 \u6234\u5e3d\u5b50 \u7684 \u5973\u4eba \u6b63\u5728 \u770b\u7740 \u8fdc\u5904 \u7684 \u84dd\u5929 \u5927\u6d77",
+      "id": 5,
+      "image_id": 6678090646845985471
+    },
+    {
+      "caption": "\u84dd\u5929 \u4e0b \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u4e0a \u6709 \u4e09\u4e2a \u77ed\u53d1 \u7684 \u7537\u5b69 \u5728 \u73a9\u7403",
+      "id": 6,
+      "image_id": 2672643569347560246
+    },
+    {
+      "caption": "\u4e09\u4e2a \u77ed\u53d1 \u7684 \u7537\u5b69\u5b50 \u5728 \u84dd\u5929 \u4e0b \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u4e0a \u73a9\u7403",
+      "id": 7,
+      "image_id": 2672643569347560246
+    },
+    {
+      "caption": "\u84dd\u5929 \u4e0b \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u4e0a \u6709 \u4e09\u4e2a \u7a7f\u7740 \u6cf3\u88e4 \u7684 \u5b69\u5b50 \u5728 \u73a9\u7403",
+      "id": 8,
+      "image_id": 2672643569347560246
+    },
+    {
+      "caption": "\u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u4e0a \u6709 3 \u4e2a \u7a7f\u7740 \u6cf3\u88e4 \u7684 \u7537\u5b69\u5b50 \u5728 \u8e22\u7403",
+      "id": 9,
+      "image_id": 2672643569347560246
+    },
+    {
+      "caption": "\u84dd\u5929 \u4e0b \u6d77\u8fb9 \u7684 \u6c99\u6ee9 \u4e0a \u6709 3 \u4e2a \u77ed\u53d1 \u5c0f\u7537\u5b69 \u5728 \u8e22\u7403",
+      "id": 10,
+      "image_id": 2672643569347560246
+    },
+    {
+      "caption": "\u4e00\u4e2a \u7537\u4eba \u548c \u4e00\u4e2a \u5973\u4eba \u624b\u62c9\u624b \u7684 \u8d70 \u5728 \u6d77\u8fb9 \u7684 \u77f3\u6ee9 \u4e0a",
+      "id": 11,
+      "image_id": 487904842962333940
+    },
+    {
+      "caption": "\u6d77\u8fb9 \u7684 \u77f3\u6ee9 \u4e0a \u6709 \u4e00\u5bf9 \u624b\u62c9\u624b \u4e00\u8d77 \u6563\u6b65 \u7684 \u4eba",
+      "id": 12,
+      "image_id": 487904842962333940
+    },
+    {
+      "caption": "\u4e00\u5bf9 \u624b\u62c9\u624b \u6563\u6b65 \u7684 \u4eba \u8d70 \u5728 \u6d77\u8fb9 \u7684 \u77f3\u6ee9 \u4e0a",
+      "id": 13,
+      "image_id": 487904842962333940
+    },
+    {
+      "caption": "\u4e00\u4e2a \u80cc\u7740 \u659c\u630e\u5305 \u7684 \u5973\u4eba \u548c \u4e00\u4e2a \u7537\u4eba \u624b\u62c9\u624b \u8d70 \u5728 \u6d77\u8fb9 \u662f \u77f3\u6ee9 \u4e0a",
+      "id": 14,
+      "image_id": 487904842962333940
+    },
+    {
+      "caption": "\u6d77\u8fb9 \u7684 \u77f3\u6ee9 \u4e0a \u6709 \u4e00\u4e2a \u7537\u4eba \u62c9\u7740 \u4e00\u4e2a \u80cc\u7740 \u659c\u630e\u5305 \u7684 \u5973\u4eba \u8d70 \u7740",
+      "id": 15,
+      "image_id": 487904842962333940
+    }
+  ],
+  "images": [
+    {
+      "file_name": "d9a9a8cfb9fdebe3f4f6996756ae23ae0e473d0c",
+      "id": 6678090646845985471
+    },
+    {
+      "file_name": "d9a9a8cfb9fdebe3f4f6996756ae23ae0e473d0c",
+      "id": 6678090646845985471
+    },
+    {
+      "file_name": "d9a9a8cfb9fdebe3f4f6996756ae23ae0e473d0c",
+      "id": 6678090646845985471
+    },
+    {
+      "file_name": "d9a9a8cfb9fdebe3f4f6996756ae23ae0e473d0c",
+      "id": 6678090646845985471
+    },
+    {
+      "file_name": "d9a9a8cfb9fdebe3f4f6996756ae23ae0e473d0c",
+      "id": 6678090646845985471
+    },
+    {
+      "file_name": "2da70f0e6fe46642a18f35ed72c7c0b5f6fca09d",
+      "id": 2672643569347560246
+    },
+    {
+      "file_name": "2da70f0e6fe46642a18f35ed72c7c0b5f6fca09d",
+      "id": 2672643569347560246
+    },
+    {
+      "file_name": "2da70f0e6fe46642a18f35ed72c7c0b5f6fca09d",
+      "id": 2672643569347560246
+    },
+    {
+      "file_name": "2da70f0e6fe46642a18f35ed72c7c0b5f6fca09d",
+      "id": 2672643569347560246
+    },
+    {
+      "file_name": "2da70f0e6fe46642a18f35ed72c7c0b5f6fca09d",
+      "id": 2672643569347560246
+    },
+    {
+      "file_name": "ccb266555270ab15a7018241bad94a8880571e43",
+      "id": 487904842962333940
+    },
+    {
+      "file_name": "ccb266555270ab15a7018241bad94a8880571e43",
+      "id": 487904842962333940
+    },
+    {
+      "file_name": "ccb266555270ab15a7018241bad94a8880571e43",
+      "id": 487904842962333940
+    },
+    {
+      "file_name": "ccb266555270ab15a7018241bad94a8880571e43",
+      "id": 487904842962333940
+    },
+    {
+      "file_name": "ccb266555270ab15a7018241bad94a8880571e43",
+      "id": 487904842962333940
+    }
+  ],
+  "info": {
+    "contributor": "He Zheng",
+    "description": "CaptionEval",
+    "url": "https://github.com/AIChallenger/AI_Challenger.git",
+    "version": "1",
+    "year": 2017
+  },
+  "licenses": [
+    {
+      "url": "https://challenger.ai"
+    }
+  ],
+  "type": "captions"
+}
