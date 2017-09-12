@@ -42,7 +42,7 @@ import numpy as np
 
 
 def load_annotations(anno_file, return_dict):
-    """Convert and store annotations in memory."""
+    """Convert annotation JSON file."""
 
     annotations = dict()
     annotations['image_ids'] = set([])
@@ -53,7 +53,7 @@ def load_annotations(anno_file, return_dict):
     try:
         annos = json.load(open(anno_file, 'r'))
     except Exception:
-        return_dict['error'] = 'Annotation file does not exist or is an invalid json file.'
+        return_dict['error'] = 'Annotation file does not exist or is an invalid JSON file.'
         exit(return_dict['error'])
 
     for anno in annos:
@@ -66,16 +66,17 @@ def load_annotations(anno_file, return_dict):
 
 
 def load_predictions(prediction_file, return_dict):
-    """Convert and store predictions in memory."""
+    """Convert prediction JSON file."""
 
     predictions = dict()
     predictions['image_ids'] = []
     predictions['annos'] = dict()
+    id_set = set([])
 
     try:
         preds = json.load(open(prediction_file, 'r'))
     except Exception:
-        return_dict['error'] = 'Prediction file does not exist or is an invalid json file.'
+        return_dict['error'] = 'Prediction file does not exist or is an invalid JSON file.'
         exit(return_dict['error'])
 
     for pred in preds:
@@ -85,50 +86,19 @@ def load_predictions(prediction_file, return_dict):
             continue
         if 'keypoint_annotations' not in pred.keys():
             return_dict['warning'].append(pred['image_id']+\
-                ' does not have key \'keypoint_annotations\'')
+                ' does not have key \'keypoint_annotations\'.')
             continue
-        predictions['image_ids'].append(pred['image_id'].split('.')[0])
+        image_id = pred['image_id'].split('.')[0]
+        if image_id in id_set:
+            return_dict['warning'].append(pred['image_id']+\
+                ' is duplicated in prediction JSON file.')
+        else:
+            id_set.add(image_id)
+        predictions['image_ids'].append(image_id)
         predictions['annos'][pred['image_id']] = dict()
         predictions['annos'][pred['image_id']]['keypoint_annos'] = pred['keypoint_annotations']
 
     return predictions
-
-
-def keypoint_eval(predictions, annotations, return_dict):
-    """Evaluate predicted_file and return mAP."""
-
-    oks_all = np.zeros((0))
-    oks_num = 0
-
-    # for every annotation in our test/validation set
-    for image_id in annotations['image_ids']:
-
-        # if the image in the predictions, then compute oks
-        if image_id in predictions['image_ids']:
-            oks = compute_oks(anno=annotations['annos'][image_id], \
-                              predict=predictions['annos'][image_id]['keypoint_annos'], \
-                              delta=annotations['delta'])
-            # view pairs with max OKSs as match ones, add to oks_all
-            oks_all = np.concatenate((oks_all, np.max(oks, axis=0)), axis=0)
-            # accumulate total num by max(gtN,pN)
-            oks_num += np.max(oks.shape)
-        else:
-            # otherwise report warning
-            return_dict['warning'].append(image_id+' is not in the prediction JSON file.')
-            # number of humen in ground truth annotations
-            gt_n = len(annotations['annos'][image_id]['human_annos'].keys())
-            # fill 0 in oks scores
-            oks_all = np.concatenate((oks_all, np.zeros((gt_n))), axis=0)
-            # accumulate total num by ground truth number
-            oks_num += gt_n
-
-    # compute mAP by APs under different oks thresholds
-    AP = []
-    for threshold in np.linspace(0.5, 0.95, 10):
-        AP.append(np.sum(oks_all > threshold)/np.float32(oks_num))
-    return_dict['score'] = np.mean(AP)
-
-    return return_dict
 
 
 def compute_oks(anno, predict, delta):
@@ -153,45 +123,89 @@ def compute_oks(anno, predict, delta):
             for j in range(predict_count):
                 predict_key = predict.keys()[j]
                 predict_keypoints = np.reshape(predict[predict_key], (14, 3))
-                dis = np.sum((anno_keypoints[visible, 0:2]-predict_keypoints[visible, 0:2])**2, axis=1)
+                dis = np.sum((anno_keypoints[visible, :2] \
+                    - predict_keypoints[visible, :2])**2, axis=1)
                 oks[i, j] = np.mean(np.exp(-dis/2/delta[visible]**2/scale))
     return oks
 
 
+def keypoint_eval(predictions, annotations, return_dict):
+    """Evaluate predicted_file and return mAP."""
+
+    oks_all = np.zeros((0))
+    oks_num = 0
+
+    # for every annotation in our test/validation set
+    for image_id in annotations['image_ids']:
+        # if the image in the predictions, then compute oks
+        if image_id in predictions['image_ids']:
+            oks = compute_oks(anno=annotations['annos'][image_id], \
+                              predict=predictions['annos'][image_id]['keypoint_annos'], \
+                              delta=annotations['delta'])
+            # view pairs with max OKSs as match ones, add to oks_all
+            oks_all = np.concatenate((oks_all, np.max(oks, axis=0)), axis=0)
+            # accumulate total num by max(gtN,pN)
+            oks_num += np.max(oks.shape)
+        else:
+            # otherwise report warning
+            return_dict['warning'].append(image_id+' is not in the prediction JSON file.')
+            # number of humen in ground truth annotations
+            gt_n = len(annotations['annos'][image_id]['human_annos'].keys())
+            # fill 0 in oks scores
+            oks_all = np.concatenate((oks_all, np.zeros((gt_n))), axis=0)
+            # accumulate total num by ground truth number
+            oks_num += gt_n
+
+    # compute mAP by APs under different oks thresholds
+    average_precision = []
+    for threshold in np.linspace(0.5, 0.95, 10):
+        average_precision.append(np.sum(oks_all > threshold)/np.float32(oks_num))
+    return_dict['score'] = np.mean(average_precision)
+
+    return return_dict
+
+
 def main():
     """The evaluator."""
-    
+
+    # Arguments parser
     parser = argparse.ArgumentParser()
-    parser.add_argument('--submit', help='prediction json file', type=str, 
-                                    default='keypoint_predictions_example.json')
+    parser.add_argument('--submit', help='prediction json file', type=str,
+                        default='keypoint_predictions_example.json')
     parser.add_argument('--ref', help='annotation json file', type=str,
-                                 default='keypoint_annotations_example.json')
+                        default='keypoint_annotations_example.json')
     args = parser.parse_args()
 
+    # Initialize return_dict
     return_dict = dict()
     return_dict['error'] = None
     return_dict['warning'] = []
     return_dict['score'] = None
 
+    # Load annotation JSON file
     start_time = time.time()
     annotations = load_annotations(anno_file=args.ref,
                                    return_dict=return_dict)
     print 'Complete reading annotation JSON file in %.2f seconds.' %(time.time() - start_time)
 
+    # Load prediction JSON file
     start_time = time.time()
     predictions = load_predictions(prediction_file=args.submit,
                                    return_dict=return_dict)
     print 'Complete reading prediction JSON file in %.2f seconds.' %(time.time() - start_time)
 
+    # Keypoint evaluation
     start_time = time.time()
     return_dict = keypoint_eval(predictions=predictions,
                                 annotations=annotations,
                                 return_dict=return_dict)
     print 'Complete evaluation in %.2f seconds.' %(time.time() - start_time)
 
+    # Print return_dict and final score
     pprint.pprint(return_dict)
     print 'Score: ', '%.8f' % return_dict['score']
 
 
 if __name__ == "__main__":
+
     main()
