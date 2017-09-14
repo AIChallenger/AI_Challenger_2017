@@ -8,6 +8,9 @@
 ./scene_classification_eval
 - Evaluation utility for scene classification task.
 
+./interpretation_and_translation_eval
+- Evaluation utility for interpretation and translation task.
+
 
 ## References ##
 
