@@ -17,7 +17,7 @@ Step 1: wrap your translation result into sgm file
 Step 2: Segment reference and hyp sgm files
 ```
 ./tools/chi_char_segment.pl -t xml < work-demo1/hyp.sgm > work-demo1/hyp.seg.sgm 
-./tools/chi_char_segment.pl -t xml < work-demo1/hyp.sgm > work-demo1/ref.seg.sgm 
+./tools/chi_char_segment.pl -t xml < work-demo1/ref.sgm > work-demo1/ref.seg.sgm 
 ```
 
 Step 3: Calculate BLEU score for the translation result
