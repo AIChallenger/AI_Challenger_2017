@@ -11,7 +11,7 @@
 Step 1: wrap your translation result into sgm file
 ```
 [ ! -s work-demo1 ] && mkdir work-demo1
-./tools/wrap_xml.pl zh data1/src.sgm DemoSys1 < data1/hyp > work-demo1/hyp.sgm
+./tools/wrap_xml.pl zh data1/src.sgm DemoSystem < data1/hyp > work-demo1/hyp.sgm
 ```
 
 Step 2: Segment reference and hyp sgm files
