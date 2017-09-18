@@ -25,9 +25,10 @@ python scene.py --mode test --test_dir TEST_IMAGE_PATH
 ```
 Test result will be writed into JSON file named "submit.json", which contains image_id, top3 label_id as a list.
 # Calculate Accuracy
-Run the evaluation script. (This script is the lastest and robust version. In order to be compatible with label_id in string type, we always convert label_id to integer in reference file.)
+Run the evaluation script. (This script is the lastest and robust version. In order to be compatible with label_id in string type, we always convert label_id to integer in reference data.)
 ```
 python scene_eval.py --submit SUBMIT_FILEPATH --ref REF_FILEPATH
 ```
+Top 3 accuracy in validation is about 40% with default training parameters.
 # References
 Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
