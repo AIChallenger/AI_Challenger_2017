@@ -15,14 +15,19 @@ This simple model consists of three convolutional layers, three max pool layers 
 # Training a Model
 Run the training script.
 ```
-python scene.py --mode train --train_dir train_images_path --annotations annotations_file_path --max_step 65000
+python scene.py --mode train --train_dir TRAIN_IMAGE_PATH --annotations ANNOTATIONS_FILE_PATH --max_step 65000
 ```
 The batch loss and accuracy will be logged in scene.log.
 # Test a Model
 Run the test script. 
 ```
-python scene.py --mode test --test_dir test_images_path
+python scene.py --mode test --test_dir TEST_IMAGE_PATH
 ```
 Test result will be writed into JSON file named "submit.json", which contains image_id, top3 label_id as a list.
+# Calculate accuracy
+Run the evaluation script.
+```
+python scene_eval.py --submit SUBMIT_FILEPATH --ref REF_FILEPATH
+```
 # References
 Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.
