@@ -7,7 +7,7 @@ Scene classification baseline for AI_Challenger dataset.
 - Pillow (4.2.1)
 
 # Prepare the Training Data
-To train the model you will need to provide training data in numpy array format. We have provided a script (scene_input.py) to preprocess the AI_Challenger scene image dataset. The script will read the annotations file to get all the information. In each training step, it will fetch specific number of images according to the batch size, resize each images and crop a square area, concate them in zero axis into a larger batch as the final input data. The corresponding labels are also obtained. 
+To train the model you will need to provide training data in numpy array format. We have provided a script (scene_input.py) to preprocess the AI_Challenger scene image dataset. The script will read the annotations file to get all the information. In each training step, it will fetch specific number of images according to the batch size, then resize each image, crop a square area and concate them in zero axis (form a larger batch as the final input data). The corresponding labels are also obtained. 
 
 # Model description
 This simple model consists of three convolutional layers, three max pool layers and two fully connected layers. Local response normalization and dropout are also used. Details of network structure is in network.py.
