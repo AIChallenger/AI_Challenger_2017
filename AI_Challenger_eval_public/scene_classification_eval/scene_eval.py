@@ -51,7 +51,7 @@ def __load_data(submit_file, reference_file):
     for item in submit_data:
         submit_dict[item['image_id']] = item['label_id']
     for item in ref_data:
-        ref_dict[item['image_id']] = item['label_id']
+        ref_dict[item['image_id']] = int(item['label_id'])
     return submit_dict, ref_dict
 
 
