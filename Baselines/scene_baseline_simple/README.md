@@ -2,6 +2,7 @@
 challenger.ai     
 Scene classification baseline for AI_Challenger dataset.
 # Requirements
+- python3
 - TensorFlow 1.0 or greater
 - opencv-python (3.2.0.7)
 - Pillow (4.2.1)
