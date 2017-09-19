@@ -111,6 +111,6 @@ if __name__ == '__main__':
         result = __eval_result(SUBMIT, REF)
     except Exception as error:
         result['error'].append(str(error))
-    print('Evalation time of your result: %f s' % (time.time() - START_TIME))
+    print('Evaluation time of your result: %f s' % (time.time() - START_TIME))
 
     print(result)
