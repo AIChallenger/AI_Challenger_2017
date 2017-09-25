@@ -125,7 +125,7 @@ def compute_oks(anno, predict, delta):
                 predict_keypoints = np.reshape(predict[predict_key], (14, 3))
                 dis = np.sum((anno_keypoints[visible, :2] \
                     - predict_keypoints[visible, :2])**2, axis=1)
-                oks[i, j] = np.mean(np.exp(-dis/2/delta[visible]**2/scale))
+                oks[i, j] = np.mean(np.exp(-dis/2/delta[visible]**2/(scale+1)))
     return oks
 
 
