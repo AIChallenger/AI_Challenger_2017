@@ -134,11 +134,14 @@ def keypoint_eval(predictions, annotations, return_dict):
 
     oks_all = np.zeros((0))
     oks_num = 0
+    
+    # Construct set to speed up id searching.
+    prediction_id_set = set(predictions['image_ids'])
 
     # for every annotation in our test/validation set
     for image_id in annotations['image_ids']:
         # if the image in the predictions, then compute oks
-        if image_id in predictions['image_ids']:
+        if image_id in prediction_id_set:
             oks = compute_oks(anno=annotations['annos'][image_id], \
                               predict=predictions['annos'][image_id]['keypoint_annos'], \
                               delta=annotations['delta'])
