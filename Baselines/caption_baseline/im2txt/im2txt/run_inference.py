@@ -36,14 +36,14 @@ from inference_utils import vocabulary
 
 FLAGS = tf.flags.FLAGS
 
-tf.flags.DEFINE_string("checkpoint_path", "/home/store-1-img/zhenghe/chuangxin_data/model_100000/train",
+tf.flags.DEFINE_string("checkpoint_path", "/your_checkpoint_path",
                        "Model checkpoint file or directory containing a "
                        "model checkpoint file.")
-tf.flags.DEFINE_string("vocab_file", "/home/store-1-img/zhenghe/caption_faceplusplus/chuangxinTFRECORD_data_100000/word_counts.txt", "Text file containing the vocabulary.")
-tf.flags.DEFINE_string("image_dir", "/home/store-1-img/zhenghe/image_test/",
+tf.flags.DEFINE_string("vocab_file", "/your_word_dir/word_counts.txt", "Text file containing the vocabulary.")
+tf.flags.DEFINE_string("image_dir", "/your_image_dir/image_test/",
                        "image dir of images for test "
                        "of image files.")
-tf.flags.DEFINE_string("out_predict_json", "/home/store-1-img/zhenghe/test1_predict.json",
+tf.flags.DEFINE_string("out_predict_json", "/your_json_dir/your_output.json",
                        "Out put predict json file")
 
 
