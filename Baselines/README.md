@@ -5,3 +5,6 @@
 
 ./scene_baseline_simple
 - Baseline for scene classification task.
+
+./keypoint_baseline
+- Baseline for keypoint detection task.
