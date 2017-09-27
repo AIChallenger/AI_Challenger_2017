@@ -2,7 +2,7 @@
 This baseline method first uses SSD to locate each person appearing in the picture, then a semantic segmentation model is trained to identify each visible skeletal keypoint labeled by a rounded area within the bounding box of each person. 
 
 
-### Setup the Environments
+### Environment Setup
 1. make sure python 2.7 and tensorflow are installed 
 1. run `setup.sh`
 1. download the dataset for the contest, put corresponding data files in `data/train`, `data/valid`, `data/test`
@@ -37,3 +37,6 @@ python predict.py --img_dir data/valid/keypoint_validation_images_20170911\
                   --model train/snapshots/model.ckpt-200000
 ```
 
+### Reference
+- Liu, Wei, et al. "SSD: Single shot multibox detector." European conference on computer vision. Springer, Cham, 2016.
+- Chen, Liang-Chieh, et al. "DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs." IEEE Transactions on Pattern Analysis and Machine Intelligence (2017).
