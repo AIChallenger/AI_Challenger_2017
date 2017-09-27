@@ -49,6 +49,11 @@ Run the training script.
 ./finetune.sh
 ```
 Note that you should change data_dir in finetune.sh
+# Generating Captions and output json file
+```
+./inference.sh
+```
+
 # References
 
 Show and Tell: A Neural Image Caption Generator
