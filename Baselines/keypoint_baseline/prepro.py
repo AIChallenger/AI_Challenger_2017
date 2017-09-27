@@ -52,6 +52,10 @@ for idx, anno in enumerate(annos):
             bbox = anno['human_annotations'][key]
             mask = np.zeros((height, width), 'uint8')
 
+            bbox_area = (bbox[3]-bbox[1]) * (bbox[2]-bbox[0])
+            if bbox_area == 0:
+                continue
+
             # Expand bounding box by 10%.
             expand_x = int(0.1 * np.float32(bbox[2] - bbox[0]))
             expand_y = int(0.1 * np.float32(bbox[3] - bbox[1]))
