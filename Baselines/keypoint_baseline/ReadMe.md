@@ -18,7 +18,7 @@ python prepro.py
 
 # start training
 python tensorflow-deeplab-resnet/train.py \
---data-dir=train/ \
+--data-dir=./ \
 --data-list=train/train.txt \
 --snapshot-dir=train/snapshots/ \
 --ignore-label=0 \
