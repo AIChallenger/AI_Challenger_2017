@@ -107,6 +107,8 @@ def compute_oks(anno, predict, delta):
     anno_count = len(anno['keypoint_annos'].keys())
     predict_count = len(predict.keys())
     oks = np.zeros((anno_count, predict_count))
+    if predict_count == 0:
+        return oks.T
 
     # for every human keypoint annotation
     for i in range(anno_count):
@@ -146,7 +148,7 @@ def keypoint_eval(predictions, annotations, return_dict):
                               predict=predictions['annos'][image_id]['keypoint_annos'], \
                               delta=annotations['delta'])
             # view pairs with max OKSs as match ones, add to oks_all
-            oks_all = np.concatenate((oks_all, np.max(oks, axis=0)), axis=0)
+            oks_all = np.concatenate((oks_all, np.max(oks, axis=1)), axis=0)
             # accumulate total num by max(gtN,pN)
             oks_num += np.max(oks.shape)
         else:
