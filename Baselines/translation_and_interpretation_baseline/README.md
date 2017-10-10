@@ -29,7 +29,7 @@ Run the inference script
 ./infer.sh 
 
 
-#References
+# References
 
 Attention Is All You Need
 
