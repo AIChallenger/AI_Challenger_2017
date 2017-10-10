@@ -1,5 +1,7 @@
 #! /bin/sh
 
+# Download the dataset and put the dataset in ../raw_data file
+
 DATA_DIR=./t2t_data
 TMP_DIR=../raw_data
 mkdir -p $DATA_DIR
