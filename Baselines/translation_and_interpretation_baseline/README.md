@@ -36,4 +36,5 @@ Attention Is All You Need
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin
 
 Full text available at: https://arxiv.org/abs/1706.03762
+
 Code availabel at: https://github.com/tensorflow/tensor2tensor
