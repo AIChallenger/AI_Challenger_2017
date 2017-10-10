@@ -13,9 +13,9 @@ Neural Machine Translation (English-to-Chinese) baseline for AI_Challenger datas
 1. Download the dataset and put the dataset in raw_data file
 2. Run the data preparation script
 
-cd train
+    cd train
 
-./prepare.sh
+    ./prepare.sh
 
 # Train Model
 Run the training script
