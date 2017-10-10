@@ -14,6 +14,7 @@ Neural Machine Translation (English-to-Chinese) baseline for AI_Challenger datas
 2. Run the data preparation script
 
 cd train
+
 ./prepare.sh
 
 # Train Model
