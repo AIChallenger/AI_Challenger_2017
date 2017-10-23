@@ -1,3 +1,17 @@
+# Copyright 2017 challenger.ai
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 from __future__ import print_function
 import os
 import json
@@ -51,6 +65,10 @@ for idx, anno in enumerate(annos):
             keypoints = np.reshape(anno['keypoint_annotations'][key], (14, 3))
             bbox = anno['human_annotations'][key]
             mask = np.zeros((height, width), 'uint8')
+
+            bbox_area = (bbox[3]-bbox[1]) * (bbox[2]-bbox[0])
+            if bbox_area == 0:
+                continue
 
             # Expand bounding box by 10%.
             expand_x = int(0.1 * np.float32(bbox[2] - bbox[0]))
