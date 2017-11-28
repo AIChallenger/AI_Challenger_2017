@@ -1,6 +1,8 @@
 # AI_Challenger
 challenger.ai     
 Image caption (Chinese) baseline for AI_Challenger dataset.    
+# Citing
+If you find this useful in your research, please consider citing the following paper:  
 "AI Challenger : A Large-scale Dataset for Going Deeper in Image Understanding".     
 [Find the paper here.](https://arxiv.org/abs/1711.06475)
 
