@@ -1,6 +1,18 @@
 ### Description
 This baseline method first uses SSD to locate each person appearing in the picture, then a semantic segmentation model is trained to identify each visible skeletal keypoint labeled by a rounded area within the bounding box of each person. 
+### Citing
+If you find this useful in your research, please consider citing the following paper:  
+"AI Challenger : A Large-scale Dataset for Going Deeper in Image Understanding".     
+[Find the paper here.](https://arxiv.org/abs/1711.06475)
 
+```
+@article{wu2017ai,
+  title={AI Challenger: A Large-scale Dataset for Going Deeper in Image Understanding},
+  author={Wu, Jiahong and Zheng, He and Zhao, Bo and Li, Yixin and Yan, Baoming and Liang, Rui and Wang, Wenjia and Zhou, Shipei and Lin, Guosen and Fu, Yanwei and others},
+  journal={arXiv preprint arXiv:1711.06475},
+  year={2017}
+}
+```
 
 ### Environment Setup
 1. make sure python 2.7 and tensorflow are installed 
