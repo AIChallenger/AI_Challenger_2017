@@ -1,6 +1,18 @@
 # AI_Challenger
 challenger.ai     
-Image caption (Chinese) baseline for AI_Challenger dataset.
+Image caption (Chinese) baseline for AI_Challenger dataset.    
+"AI Challenger : A Large-scale Dataset for Going Deeper in Image Understanding".     
+[Find the paper here.](https://arxiv.org/abs/1711.06475)
+
+```
+@article{wu2017ai,
+  title={AI Challenger: A Large-scale Dataset for Going Deeper in Image Understanding},
+  author={Wu, Jiahong and Zheng, He and Zhao, Bo and Li, Yixin and Yan, Baoming and Liang, Rui and Wang, Wenjia and Zhou, Shipei and Lin, Guosen and Fu, Yanwei and others},
+  journal={arXiv preprint arXiv:1711.06475},
+  year={2017}
+}
+```
+
 # Requirements
 - python 2.7
 - TensorFlow 1.0 or greater
