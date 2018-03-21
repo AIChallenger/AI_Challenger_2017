@@ -1,4 +1,4 @@
-## AI Challenger ##
+## AI Challenger 2017##
 AI Challenger is a platform for open datasets and programming competitions to artificial intelligence (AI) talents around the world. To participate, please visit https://challenger.ai/.
 
 ## Evaluation ##
